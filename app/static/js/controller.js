@@ -1,12 +1,13 @@
 // Whoogle configurations that use boolean values and checkboxes
 CONFIG_BOOLS = [
-    "nojs", "dark", "safe", "alts", "new_tab", "get_only"
+    "nojs", "dark", "safe", "alts", "new_tab", "get_only", "tor"
 ];
 
 // Whoogle configurations that use string values and input fields
 CONFIG_STRS = [
     "near", "url"
 ];
+
 
 const setupSearchLayout = () => {
     // Setup search field
@@ -30,7 +31,7 @@ const setupSearchLayout = () => {
 const fillConfigValues = () => {
     // Request existing config info
     let xhrGET = new XMLHttpRequest();
-    xhrGET.open("GET", "/config");
+    xhrGET.open("GET", "config");
     xhrGET.onload = function() {
         if (xhrGET.readyState === 4 && xhrGET.status !== 200) {
             alert("Error loading Whoogle config");
@@ -81,7 +82,7 @@ const loadConfig = event => {
     }
 
     let xhrPUT = new XMLHttpRequest();
-    xhrPUT.open("PUT", "/config?name=" + config + ".conf");
+    xhrPUT.open("PUT", "config?name=" + config + ".conf");
     xhrPUT.onload = function() {
         if (xhrPUT.readyState === 4 && xhrPUT.status !== 200) {
             alert("Error loading Whoogle config");
@@ -103,7 +104,7 @@ const saveConfig = event => {
     }
 
     let configForm = document.getElementById("config-form");
-    configForm.action = '/config?name=' + config + ".conf";
+    configForm.action = 'config?name=' + config + ".conf";
     configForm.submit();
 };
 
@@ -114,4 +115,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setupSearchLayout();
     setupConfigLayout();
+
+    // Focusing on the search input field requires a delay for elements to finish
+    // loading (seemingly only on FF)
+    setTimeout(function() { document.getElementById("search-bar").focus(); }, 250);
 });

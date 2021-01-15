@@ -1,0 +1,57 @@
+html {
+    background-color: #222 !important;
+}
+
+body {
+    background-color: #222 !important;
+}
+
+div {
+    color: #fff !important;
+}
+
+li a {
+    color: #4b8eaa !important;
+}
+
+li {
+    color: #fff !important;
+}
+
+a:visited h3 div {
+    color: #bbbbff !important;
+}
+
+a:link h3 div {
+    color: #4b8eea !important;
+}
+
+a:link div {
+    color: #aaffaa !important;
+}
+
+div span {
+    color: #bbb !important;
+}
+
+input {
+    background-color: #111 !important;
+    color: #fff !important;
+}
+
+#search-bar {
+    color: #fff !important;
+    background-color: #222 !important;
+}
+
+.search-container {
+    background-color: #222 !important;
+}
+
+.ZINbbc{
+    background-color: #1a1a1a !important;   
+}
+
+.bRsWnc{
+    background-color: #1a1a1a !important;   
+}
