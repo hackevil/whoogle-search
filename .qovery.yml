@@ -1,0 +1,11 @@
+---
+application:
+  name: "whoogle-search"
+  project: "Whoogle"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-whoogle-search"
+  routes:
+  - application_name: "whoogle-search"
+    paths:
+    - "/*"
